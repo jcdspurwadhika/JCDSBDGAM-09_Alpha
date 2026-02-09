@@ -100,7 +100,54 @@ Late delivery
    - Data consistency validation
 
 ## 2.2 Seller Analysis
+### Data Cleaning & Engineering Actions
 
+To ensure the analysis reflects the true operational reality, I performed advanced data engineering rather than simple row deletion.
+
+| Data Issue | Action Taken | Rationale & Methodology |
+| :--- | :--- | :--- |
+| **Missing Logistics Dates** | **Seller-Specific Median Imputation** | Global averages hide bad performers. I calculated the *Median Processing Time* for each specific seller to fill missing `approval` and `carrier_handover` dates. This restored **100% of the timeline** for active orders. |
+| **Price Outliers** | **Strategic Retention** | Detected high-ticket items (Price > IQR). I decided to **keep them** because they contribute **35.61% of Total Revenue**. Removing them would distort the financial value of the platform. |
+| **Complex IDs** | **ID Standardization** | Transformed long hash UUIDs (e.g., `3442f8...`) into human-readable formats (e.g., `S0001`, `S0798`) to make visualizations and reporting easier to understand. |
+| **Language Barrier** | **Translation Mapping** | The raw data contained Portuguese category names. I mapped them to English and manually fixed missing translations. |
+| **"Ghost" Shipments** | **Logic Correction** | Identify orders marked as `delivered` but missing arrival dates. Imputed these specific gaps using the seller's historical *Transit Time* median to prevent data loss in logistics analysis. |
+
+### Seller Perspective: The Operational "Black Box"
+
+To understand the health of the Olist ecosystem, we must look at the platform through the eyes of the Seller. Our initial audit suggests that while Olist solves the problem of "Market Access," it creates a new challenge: **Logistics Complexity**.
+
+We have identified two primary friction points that we aim to investigate in this notebook:
+
+**1. The "First Mile" Variance**
+*   **The Problem:** Once an order is approved, the control shifts entirely to the seller. Currently, Olist has limited visibility into how long a seller takes to pack and hand over an item.
+*   **The Investigation:** We hypothesize that high-volume sellers might be struggling with processing backlogs. Does selling *more* inevitably mean delivering *slower*? We aim to find out if there is a specific "tipping point" where operational quality breaks down.
+
+**2. The Geography Mismatch**
+*   **The Problem:** Brazil is massive. If a seller is based in the South but most buyers are in the North, the "Time-to-Delivery" is physically capped by distance.
+*   **The Investigation:** We suspect there are "Supply Deserts"—regions with high buyer demand but zero local sellers. Identifying these gaps is crucial because serving these buyers from far away destroys profit margins.
+
+**3. Business Impact:**
+If these frictions are left unchecked, they lead to two silent killers:
+*   **Margin Erosion:** High freight costs due to inefficient shipping routes.
+*   **Silent Churn:** Sellers don't just "quit" suddenly; they likely experience operational failure (delays) first. If we can't detect these delays, we can't prevent them from leaving.
+
+---
+
+### Strategic Recommendations Framework
+
+Based on the problems identified above, this project aims to formulate a three-pillared strategy. *Note: Specific targets and city names will be revealed in the final conclusion.*
+
+**Strategy 1: The "Local-to-Local" Initiative**
+*   **Objective:** Reduce freight costs and unlock "Same-Day Delivery."
+*   **Approach:** Instead of recruiting sellers randomly, we will use **Geospatial Analysis** to pinpoint specific cities with the highest "Buyer-to-Seller Ratio." We recommend focusing acquisition efforts strictly on these high-demand zones to localize the supply chain.
+
+**Strategy 2: Proactive "Health Scorecards"**
+*   **Objective:** Shift from reactive churn management to proactive support.
+*   **Approach:** Currently, we only know a seller is in trouble when they cancel orders. We propose building an **Early Warning System** based on "Processing Time" benchmarks. If a seller starts slowing down relative to their peers, the system should trigger an intervention *before* the customer complains.
+
+**Strategy 3: Targeted Infrastructure Support**
+*   **Objective:** Support high-volume product clusters.
+*   **Approach:** Not all products are equal. We aim to identify specific product categories (e.g., heavy goods or fragile items) that consistently cause delays. The recommendation will involve establishing specialized **Logistics Collection Points** in key hubs to assist sellers in these difficult categories.
 ## 3. Data Overview
 
 
