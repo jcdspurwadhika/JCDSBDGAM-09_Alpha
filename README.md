@@ -4,7 +4,7 @@ Contributors: Dyah Almira | Lukman Fathoni | Axel Alexander
 
 <img width="897" height="595" alt="image" src="https://github.com/user-attachments/assets/56f2424c-5076-4acc-bc95-83b7e10da0a7" />
 
-Tableau link : 
+Tableau link : [Olist Dashboard](https://public.tableau.com/app/profile/dyah.almira/viz/Alphagroup_Olist/Homepage)
 
 <img width="1903" height="881" alt="image" src="https://github.com/user-attachments/assets/eca7c9f7-28e2-4ef0-970b-515d04f92251" />
 
