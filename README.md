@@ -7,6 +7,97 @@ Contributors: Dyah Almira | Lukman Fathoni | Axel Alexander
 # 2. Analysis
 
 ## 2.1 Buyer Analysis
+### 📋 Overview
+
+This component analyzes **seller churn risk from the buyer perspective** using transaction and behavioral data from the Olist marketplace.
+
+### Core Hypothesis
+
+Since direct seller churn labels are unavailable, buyer experience serves as an **early warning proxy** to evaluate whether sellers are losing competitiveness on the platform:
+
+```
+Buyer Dissatisfaction → Declining Demand → Weakening Seller Performance → Potential Seller Churn
+```
+
+---
+### 🎯 Objectives
+
+- Identify patterns in buyer behavior that may signal seller performance degradation
+- Analyze buyer satisfaction metrics as indirect indicators of seller health
+- Examine delivery performance and its impact on buyer retention
+- Assess repeat purchase behavior as a proxy for seller competitiveness
+- Evaluate transaction value patterns across different seller segments
+
+---
+
+### 🧠 Analytical Framework
+
+Four buyer-based signals were investigated:
+
+1. **Buyer Satisfaction Signal**  
+   - Impact of late delivery on `review_score`  
+   - Rating distribution between late vs on-time orders
+
+2. **Delivery Performance Signal**  
+   - Effect of `delivery_time` duration  
+   - Proportion of late deliveries
+
+3. **Repeat Buyer Signal**  
+   - Purchase frequency per `customer_unique_id`  
+   - Dependence on one-time buyers
+
+4. **Transaction Value Signal**  
+   - `total_value` as economic attractiveness  
+   - Relationship between value, lateness, and satisfaction
+
+---
+
+### 📊 Key Insights
+
+| Insight Category | Key Finding | Business Impact |
+|---|---|---|
+| ⭐ Satisfaction Collapse | Late deliveries reduce average rating from ~4.1 → ~2.5 | Seller reputation drops sharply |
+| 🔁 Loyalty Risk | Majority of buyers are one-time customers | Revenue base is unstable |
+| 💸 Value Erosion | Late orders show lower transaction value | Profitable buyers leave first |
+| ⏱ Delivery Sensitivity | Longer delivery = lower rating | Buyer experience mirrors seller ops |
+
+**Behavioral Flow Identified**
+
+Late delivery  
+→ lower review score  
+→ fewer repeat buyers  
+→ declining order value  
+→ weakened seller performance  
+→ potential seller churn
+
+### Analytical Approach
+
+- **Exploratory Data Analysis (EDA):** Understanding data distributions and patterns
+- **Correlation Analysis:** Identifying relationships between buyer behavior and seller performance
+- **Segmentation Analysis:** Examining patterns across product categories and customer segments
+- **Trend Analysis:** Tracking changes in buyer behavior over time
+
+### 🛠️ Methodology
+
+#### Data Preprocessing
+
+**1. Missing Value Treatment**
+   - Product category: Flagged and retained for analysis
+   - Delivery status: Created binary flag for delivered orders
+   - Review data: Preserved NaN values with review flag indicator
+   - Payment information: Handled missing sequential data
+   - Geolocation: Managed missing city/state information
+
+**2. Feature Engineering**
+   - Delivery delay calculation (actual vs. estimated)
+   - Review flag (reviewed vs. not reviewed)
+   - Repeat buyer identification
+   - Category-based segmentation
+
+**3. Data Quality Checks**
+   - Duplicate detection and removal
+   - Outlier identification
+   - Data consistency validation
 
 ## 2.2 Seller Analysis
 
