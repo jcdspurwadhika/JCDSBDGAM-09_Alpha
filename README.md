@@ -214,9 +214,93 @@ Inefficient Category (e.g., Music)
     *   **Action:** Implement a "Logistics Health Scorecard."
     *   **Goal:** Trigger automated alerts if a seller's average processing time exceeds **3 days** (before reaching the critical 7-day failure point), shifting from reactive to proactive support.
 ## 3. Data Overview
+### Dataset Information
 
+| Attribute | Value |
+|-----------|-------|
+| **Source** | Brazilian E-Commerce Public Dataset by Olist |
+| **Total Records** | 6,765 seller-quarter observations |
+| **Total Columns** | 27 features |
+| **Time Period** | 2016 - 2018 |
+| **Granularity** | Seller performance aggregated by quarter |
+| **Missing Values** | None (0% missing data) |
+| **Target Variable** | `churned` (binary: 0 = Active, 1 = Churned) |
 
+---
 
+### Column Descriptions
+
+| Column Name | Data Type | Description |
+|-------------|-----------|-------------|
+| **seller_id** | object | Unique identifier for each seller |
+| **quarter** | object | Time period in quarterly format (e.g., 2017Q3, 2018Q1) |
+| **churned** | int64 | **Target variable**: Whether seller churned in the next quarter (0 = No, 1 = Yes) |
+
+---
+
+#### 📈 Current Quarter Performance Metrics
+
+| Column Name | Data Type | Description | Range | Mean |
+|-------------|-----------|-------------|-------|------|
+| **num_orders** | float64 | Number of orders received in the current quarter | 1 - 681 | 14.4 |
+| **total_revenue** | float64 | Total revenue generated in the current quarter (BRL) | Varies | Varies |
+| **total_freight** | float64 | Total freight/shipping costs in the current quarter (BRL) | Varies | Varies |
+| **avg_order_value** | float64 | Average order value in the current quarter (BRL) | Varies | Varies |
+| **days_active_in_quarter** | int64 | Number of days seller was active in the quarter | 0 - 90 | Varies |
+| **num_categories** | int64 | Number of distinct product categories sold | 1 - N | Varies |
+
+---
+
+#### 📊 Previous Quarter Comparison Metrics
+
+| Column Name | Data Type | Description | Purpose |
+|-------------|-----------|-------------|---------|
+| **prev_quarter_num_orders** | float64 | Number of orders in the previous quarter | Compare quarter-over-quarter performance |
+| **prev_quarter_total_revenue** | float64 | Total revenue from the previous quarter (BRL) | Measure revenue trend |
+| **prev_quarter_total_freight** | float64 | Total freight costs from the previous quarter (BRL) | Track shipping cost changes |
+| **orders_change_from_prev** | float64 | Change in number of orders vs. previous quarter | Identify growth/decline |
+| **revenue_change_from_prev** | float64 | Change in revenue vs. previous quarter (BRL) | Measure revenue momentum |
+
+---
+
+#### 📉 Trend & Historical Metrics
+
+| Column Name | Data Type | Description | Purpose |
+|-------------|-----------|-------------|---------|
+| **avg_num_orders_last_2q** | float64 | Average number of orders over the last 2 quarters | Smooth out quarter volatility |
+| **avg_total_revenue_last_2q** | float64 | Average revenue over the last 2 quarters (BRL) | Track medium-term performance |
+| **lifetime_orders** | float64 | Total cumulative orders since seller joined | Measure overall seller size |
+| **lifetime_revenue** | float64 | Total cumulative revenue since seller joined (BRL) | Assess seller's total contribution |
+
+---
+
+#### ⏱️ Tenure & Activity Metrics
+
+| Column Name | Data Type | Description | Range | Purpose |
+|-------------|-----------|-------------|-------|---------|
+| **tenure_quarters** | int64 | Number of quarters seller has been on the platform | 1 - N | Measure seller longevity |
+| **quarters_since_first** | int64 | Quarters elapsed since seller's first transaction | 0 - N | Track seller timeline |
+| **num_previous_active_quarters** | int64 | Number of quarters seller was previously active | 0 - N | Assess consistent activity |
+
+---
+
+#### 🚨 Behavioral Flags
+
+| Column Name | Data Type | Description | Purpose |
+|-------------|-----------|-------------|---------|
+| **is_growing** | int64 | Flag indicating if seller is growing (1 = Yes, 0 = No) | Identify growth trajectory |
+| **is_declining** | int64 | Flag indicating if seller is declining (1 = Yes, 0 = No) | Detect performance deterioration |
+| **consecutive_declines** | int64 | Number of consecutive quarters with declining performance | Measure decline severity |
+
+---
+
+#### 📅 Temporal Features
+
+| Column Name | Data Type | Description | Purpose |
+|-------------|-----------|-------------|---------|
+| **quarter_of_year** | int64 | Quarter number within the year (1-4) | Capture seasonality |
+| **year** | int64 | Calendar year (2016-2018) | Track temporal trends |
+| **is_q4** | int64 | Flag for Q4 (holiday season) (1 = Yes, 0 = No) | Identify peak season effect |
 
 
 # 4. Seller Churn Prediction Model
