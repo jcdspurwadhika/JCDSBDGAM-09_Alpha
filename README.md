@@ -6,7 +6,10 @@ Contributors: Dyah Almira | Lukman Fathoni | Axel Alexander
 
 Tableau link : [Olist Dashboard](https://public.tableau.com/app/profile/dyah.almira/viz/Alphagroup_Olist/Homepage)
 
+
 <img width="1119" height="824" alt="image" src="https://github.com/user-attachments/assets/26474f06-e66e-4c39-8c1e-7e5db593cf2e" />
+<img width="1060" height="423" alt="image" src="https://github.com/user-attachments/assets/eb6c4d64-a8e3-46de-86eb-7da4dafa46f7" />
+<img width="1058" height="444" alt="image" src="https://github.com/user-attachments/assets/5412a017-e553-46c2-ad7a-5e203d203ba4" />
 
 
 Streamlit link : [Seller Churn Prediction Application](https://finpro-app-launch-olist-mdlfyncwpwevkdzlfe4rgu.streamlit.app/)
