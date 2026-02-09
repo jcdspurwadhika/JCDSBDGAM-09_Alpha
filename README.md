@@ -3,6 +3,10 @@
 Contributors: Dyah Almira | Lukman Fathoni | Axel Alexander
 
 <img width="897" height="595" alt="image" src="https://github.com/user-attachments/assets/56f2424c-5076-4acc-bc95-83b7e10da0a7" />
+<img width="903" height="626" alt="image" src="https://github.com/user-attachments/assets/8f627841-b001-45e2-a730-baed4b4fc7d3" />
+<img width="897" height="602" alt="image" src="https://github.com/user-attachments/assets/e46298a8-7859-4f3c-bada-3341b9f1b4fd" />
+
+
 
 Tableau link : [Olist Dashboard](https://public.tableau.com/app/profile/dyah.almira/viz/Alphagroup_Olist/Homepage)
 
