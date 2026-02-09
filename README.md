@@ -198,15 +198,15 @@ Inefficient Category (e.g., Music)
 
 1.  **Expansion Strategy (Local-to-Local Fulfillment):**
     *   **Action:** Prioritize merchant acquisition in **Guariba** and **Ilicinea**.
-    *   **Goal:** To slash logistics costs and unlock *Same-Day Delivery* capabilities in these under-served zones [Source 95].
+    *   **Goal:** To slash logistics costs and unlock *Same-Day Delivery* capabilities in these under-served zones.
 
 2.  **Logistics Infrastructure:**
     *   **Action:** Establish a dedicated Collection Point (Hub) in **Ibitinga**.
-    *   **Goal:** To streamline the "First Mile" for the high volume of textile orders originating from this specific cluster [Source 101].
+    *   **Goal:** To streamline the "First Mile" for the high volume of textile orders originating from this specific cluster.
 
 3.  **Churn Prevention System:**
     *   **Action:** Implement a "Logistics Health Scorecard."
-    *   **Goal:** Trigger automated alerts if a seller's average processing time exceeds **3 days** (before reaching the critical 7-day failure point), shifting from reactive to proactive support [Source 99].
+    *   **Goal:** Trigger automated alerts if a seller's average processing time exceeds **3 days** (before reaching the critical 7-day failure point), shifting from reactive to proactive support.
 ## 3. Data Overview
 
 
