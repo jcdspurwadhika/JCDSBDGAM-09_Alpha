@@ -13,6 +13,12 @@ Streamlit link : [Seller Churn Prediction Application](https://finpro-app-launch
 
 # 1. Business Problem
 
+Olist is the #1 commerce enabler for small and medium-sized businesses (SMBs) in Brazil, now expanding globally. Founded in 2015 by Tiago Dalvi and based in Curitiba, Brazil, the company became a unicorn in 2021 with a valuation of $1.5 billion Tracxn. Olist operates as a comprehensive e-commerce ecosystem that helps SMBs sell online by providing integrated solutions across three main dimensions: commerce (including marketplace integration and e-commerce solutions), logistics (through Olist Pax, their cloud-based fulfillment network), and capital (via Olist Credit and Olist Pay). Olist makes revenue mostly from seller subscribtion and commission from the products that is selled. 
+
+In order to generate the maximum revenue, our team decided to:
+1. Analyze the buyers and sellers of olist
+2. Make a model for predicting seller churn
+
 # 2. Analysis
 
 ## 2.1 Buyer Analysis
