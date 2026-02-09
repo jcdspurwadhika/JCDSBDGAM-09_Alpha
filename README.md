@@ -22,7 +22,7 @@ In order to generate the maximum revenue, our team decided to:
 # 2. Analysis
 
 ## 2.1 Buyer Analysis
-### 📋 Overview
+### Overview
 
 This component analyzes **seller churn risk from the buyer perspective** using transaction and behavioral data from the Olist marketplace.
 
@@ -35,7 +35,7 @@ Buyer Dissatisfaction → Declining Demand → Weakening Seller Performance → 
 ```
 
 ---
-### 🎯 Objectives
+### Objectives
 
 - Identify patterns in buyer behavior that may signal seller performance degradation
 - Analyze buyer satisfaction metrics as indirect indicators of seller health
@@ -45,7 +45,7 @@ Buyer Dissatisfaction → Declining Demand → Weakening Seller Performance → 
 
 ---
 
-### 🧠 Analytical Framework
+### Analytical Framework
 
 Four buyer-based signals were investigated:
 
@@ -67,14 +67,14 @@ Four buyer-based signals were investigated:
 
 ---
 
-### 📊 Key Insights
+### Key Insights
 
 | Insight Category | Key Finding | Business Impact |
 |---|---|---|
-| ⭐ Satisfaction Collapse | Late deliveries reduce average rating from ~4.1 → ~2.5 | Seller reputation drops sharply |
-| 🔁 Loyalty Risk | Majority of buyers are one-time customers | Revenue base is unstable |
-| 💸 Value Erosion | Late orders show lower transaction value | Profitable buyers leave first |
-| ⏱ Delivery Sensitivity | Longer delivery = lower rating | Buyer experience mirrors seller ops |
+| Satisfaction Collapse | Late deliveries reduce average rating from ~4.1 → ~2.5 | Seller reputation drops sharply |
+| Loyalty Risk | Majority of buyers are one-time customers | Revenue base is unstable |
+| Value Erosion | Late orders show lower transaction value | Profitable buyers leave first |
+| Delivery Sensitivity | Longer delivery = lower rating | Buyer experience mirrors seller ops |
 
 **Behavioral Flow Identified**
 
@@ -162,10 +162,10 @@ Four seller-based signals were investigated:
 
 | Insight Category | Key Finding | Business Impact |
 |---|---|---|
-| ⏳ Bottleneck Detection | **Music & Food** categories average **>17 days** to process | These categories drive disproportionate customer complaints. |
-| 🗺️ Market Opportunity | **Guariba** has **1,132 buyers** per **1 seller** | Major missed revenue due to lack of local fulfillment. |
-| 💎 Value Distribution | **35.61% of Revenue** comes from Price Outliers | High-value merchants are critical to platform GMV. |
-| 🚀 Scale vs. Speed | Top Seller **S0798** processes orders in **~1.5 days** | Proves high volume does not necessitate slow service. |
+| Bottleneck Detection | **Music & Food** categories average **>17 days** to process | These categories drive disproportionate customer complaints. |
+| Market Opportunity | **Guariba** has **1,132 buyers** per **1 seller** | Major missed revenue due to lack of local fulfillment. |
+| Value Distribution | **35.61% of Revenue** comes from Price Outliers | High-value merchants are critical to platform GMV. |
+| Scale vs. Speed | Top Seller **S0798** processes orders in **~1.5 days** | Proves high volume does not necessitate slow service. |
 
 **Operational Flow Identified**
 
@@ -182,7 +182,7 @@ Inefficient Category (e.g., Music)
 -   **Statistical Outlier Assessment:** Using IQR to determine the financial weight of premium products.
 -   **Performance Benchmarking:** Profiling top sellers to establish "Gold Standard" operational metrics.
 
-### 🛠️ Methodology
+### Methodology
 
 #### Data Preprocessing
 
@@ -214,6 +214,7 @@ Inefficient Category (e.g., Music)
     *   **Action:** Implement a "Logistics Health Scorecard."
     *   **Goal:** Trigger automated alerts if a seller's average processing time exceeds **3 days** (before reaching the critical 7-day failure point), shifting from reactive to proactive support.
 ## 3. Data Overview
+*These are the information for the dataset that is used for the machine learning model*
 ### Dataset Information
 
 | Attribute | Value |
@@ -238,7 +239,7 @@ Inefficient Category (e.g., Music)
 
 ---
 
-#### 📈 Current Quarter Performance Metrics
+#### Current Quarter Performance Metrics
 
 | Column Name | Data Type | Description | Range | Mean |
 |-------------|-----------|-------------|-------|------|
@@ -251,7 +252,7 @@ Inefficient Category (e.g., Music)
 
 ---
 
-#### 📊 Previous Quarter Comparison Metrics
+#### Previous Quarter Comparison Metrics
 
 | Column Name | Data Type | Description | Purpose |
 |-------------|-----------|-------------|---------|
@@ -263,7 +264,7 @@ Inefficient Category (e.g., Music)
 
 ---
 
-#### 📉 Trend & Historical Metrics
+#### Trend & Historical Metrics
 
 | Column Name | Data Type | Description | Purpose |
 |-------------|-----------|-------------|---------|
@@ -274,7 +275,7 @@ Inefficient Category (e.g., Music)
 
 ---
 
-#### ⏱️ Tenure & Activity Metrics
+#### Tenure & Activity Metrics
 
 | Column Name | Data Type | Description | Range | Purpose |
 |-------------|-----------|-------------|-------|---------|
@@ -284,7 +285,7 @@ Inefficient Category (e.g., Music)
 
 ---
 
-#### 🚨 Behavioral Flags
+#### Behavioral Flags
 
 | Column Name | Data Type | Description | Purpose |
 |-------------|-----------|-------------|---------|
@@ -294,7 +295,7 @@ Inefficient Category (e.g., Music)
 
 ---
 
-#### 📅 Temporal Features
+#### Temporal Features
 
 | Column Name | Data Type | Description | Purpose |
 |-------------|-----------|-------------|---------|
@@ -305,7 +306,7 @@ Inefficient Category (e.g., Music)
 
 # 4. Seller Churn Prediction Model
 
-## 📋 Project Overview
+## Project Overview
 
 This project develops a machine learning model to predict seller churn on an e-commerce platform (Olist). The goal is to identify sellers at risk of leaving the platform, enabling proactive retention interventions that maximize business value.
 
@@ -313,7 +314,7 @@ This project develops a machine learning model to predict seller churn on an e-c
 
 ---
 
-## 🎯 Business Context
+## Business Context
 
 ### Problem Statement
 Seller churn directly impacts marketplace revenue and ecosystem health. Identifying at-risk sellers early allows for targeted retention efforts, but false alarms waste resources. This project balances these trade-offs through cost-aware machine learning.
@@ -335,7 +336,7 @@ Seller churn directly impacts marketplace revenue and ecosystem health. Identify
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 ### Source
 - **Primary Dataset:** `seller_data.csv`
@@ -358,7 +359,7 @@ The model uses engineered features capturing:
 
 ---
 
-## 🔄 Project Workflow
+## Project Workflow
 
 ### 1. Data Cleaning
 - **Missing Value Treatment:**
@@ -423,9 +424,9 @@ ColumnTransformer([
 | **Tuned Model** | **$285,945** | -$47,850 | -$280,000 | $613,795 |
 
 **Key Improvements:**
-- ✅ **69% reduction** in false negative costs (missed churners)
-- ✅ **93% increase** in true positive benefits (successful interventions)
-- ✅ **Net positive ROI** despite higher false positive costs
+- **69% reduction** in false negative costs (missed churners)
+- **93% increase** in true positive benefits (successful interventions)
+- **Net positive ROI** despite higher false positive costs
 
 ### 6. Model Interpretability
 
@@ -449,7 +450,7 @@ ColumnTransformer([
 
 ---
 
-## 🚀 Installation & Usage
+## Installation & Usage
 
 ### Requirements
 ```bash
@@ -501,23 +502,23 @@ base_dir = "path/to/your/dataset/"
 
 ---
 
-## 📈 Results Summary
+## Results Summary
 
 ### Model Strengths
-✅ **Financial Impact:** $285,945 net benefit per evaluation period  
-✅ **High Recall:** Successfully identifies 69% more churners than baseline  
-✅ **Interpretability:** Clear explanations via SHAP and LIME for business stakeholders  
-✅ **Actionable:** Enables targeted, cost-effective retention interventions  
+**Financial Impact:** $285,945 net benefit per evaluation period  
+**High Recall:** Successfully identifies 69% more churners than baseline  
+**Interpretability:** Clear explanations via SHAP and LIME for business stakeholders  
+**Actionable:** Enables targeted, cost-effective retention interventions  
 
 ### Model Weaknesses
-⚠️ **False Positives:** Higher intervention costs for non-churning sellers  
-⚠️ **Single Algorithm:** Decision tree may miss complex patterns captured by ensembles  
-⚠️ **Class Imbalance:** Churn is minority class requiring careful handling  
-⚠️ **Feature Limitations:** Current features may not capture all behavioral nuances  
+**False Positives:** Higher intervention costs for non-churning sellers  
+**Single Algorithm:** Decision tree may miss complex patterns captured by ensembles  
+**Class Imbalance:** Churn is minority class requiring careful handling  
+**Feature Limitations:** Current features may not capture all behavioral nuances  
 
 ---
 
-## 💡 Key Insights from SHAP Analysis
+## Key Insights from SHAP Analysis
 
 ### Top Predictive Features
 1. **Quarterly Order Volume:** Sharp declines strongly indicate churn risk
@@ -533,7 +534,7 @@ base_dir = "path/to/your/dataset/"
 
 ---
 
-## 🎯 Business Recommendations
+## Business Recommendations
 
 ### 1. **Proactive Retention Program**
 - Deploy model weekly to score all active sellers
@@ -561,7 +562,7 @@ Use SHAP/LIME explanations to personalize retention strategies:
 
 ---
 
-## 🔬 Future Work
+## Future Work
 
 ### Model Improvements
 - [ ] **Ensemble Methods:** Random Forest, XGBoost, Gradient Boosting for better accuracy
@@ -583,7 +584,7 @@ Use SHAP/LIME explanations to personalize retention strategies:
 
 ---
 
-## 🤝 Acknowledgments
+## Acknowledgments
 
 - **Dataset:** Olist Brazilian E-Commerce dataset
 - **Interpretability Tools:** SHAP and LIME libraries
@@ -592,7 +593,7 @@ Use SHAP/LIME explanations to personalize retention strategies:
 
 ---
 
-## 🔑 Key Takeaways
+## Key Takeaways
 
 1. **Business Value First:** Model optimization focused on financial impact, not just accuracy
 2. **Interpretability Matters:** SHAP and LIME make ML actionable for non-technical stakeholders
@@ -602,4 +603,4 @@ Use SHAP/LIME explanations to personalize retention strategies:
 
 ---
 
-**🎉 Result:** Transforming seller churn from a revenue leak into a manageable, data-driven retention opportunity.
+
