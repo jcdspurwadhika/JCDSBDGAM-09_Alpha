@@ -14,6 +14,8 @@ Tableau link : [Olist Dashboard](https://public.tableau.com/app/profile/dyah.alm
 
 Streamlit link : [Seller Churn Prediction Application](https://finpro-app-launch-olist-mdlfyncwpwevkdzlfe4rgu.streamlit.app/)
 
+Presentation link : [Analysis of Olist and Model for Predicting Seller Churn](https://www.canva.com/design/DAHA16bphtw/I6w8IJQ9L6Px76PfwiJm4Q/edit?utm_content=DAHA16bphtw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 # 1. Business Problem
 
 Olist is the #1 commerce enabler for small and medium-sized businesses (SMBs) in Brazil, now expanding globally. Founded in 2015 by Tiago Dalvi and based in Curitiba, Brazil, the company became a unicorn in 2021 with a valuation of $1.5 billion Tracxn. Olist operates as a comprehensive e-commerce ecosystem that helps SMBs sell online by providing integrated solutions across three main dimensions: commerce (including marketplace integration and e-commerce solutions), logistics (through Olist Pax, their cloud-based fulfillment network), and capital (via Olist Credit and Olist Pay). Olist makes revenue mostly from seller subscribtion and commission from the products that is selled. 
