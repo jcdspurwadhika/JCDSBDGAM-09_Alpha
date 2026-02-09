@@ -92,7 +92,7 @@ Late delivery
 - **Segmentation Analysis:** Examining patterns across product categories and customer segments
 - **Trend Analysis:** Tracking changes in buyer behavior over time
 
-### 🛠️ Methodology
+### Methodology
 
 #### Data Preprocessing
 
